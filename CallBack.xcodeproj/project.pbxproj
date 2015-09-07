@@ -14,6 +14,9 @@
 		7A38930C1B9C922F0077EC16 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A38930B1B9C922F0077EC16 /* Images.xcassets */; };
 		7A38930F1B9C922F0077EC16 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A38930D1B9C922F0077EC16 /* LaunchScreen.xib */; };
 		7A38931B1B9C92300077EC16 /* CallBackTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A38931A1B9C92300077EC16 /* CallBackTests.m */; };
+		7A38932B1B9C9A2D0077EC16 /* HotAPIHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A38932A1B9C9A2D0077EC16 /* HotAPIHandle.m */; };
+		7A38932F1B9C9B030077EC16 /* LatestAPIHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A38932E1B9C9B030077EC16 /* LatestAPIHandle.m */; };
+		7A3893331B9C9E280077EC16 /* APIHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A3893321B9C9E280077EC16 /* APIHandle.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +43,15 @@
 		7A3893141B9C92300077EC16 /* CallBackTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CallBackTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A3893191B9C92300077EC16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7A38931A1B9C92300077EC16 /* CallBackTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CallBackTests.m; sourceTree = "<group>"; };
+		7A3893251B9C98F10077EC16 /* APIInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIInterface.h; sourceTree = "<group>"; };
+		7A3893261B9C99430077EC16 /* APICallbackInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APICallbackInterface.h; sourceTree = "<group>"; };
+		7A3893291B9C9A2D0077EC16 /* HotAPIHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotAPIHandle.h; sourceTree = "<group>"; };
+		7A38932A1B9C9A2D0077EC16 /* HotAPIHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotAPIHandle.m; sourceTree = "<group>"; };
+		7A38932D1B9C9B030077EC16 /* LatestAPIHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LatestAPIHandle.h; sourceTree = "<group>"; };
+		7A38932E1B9C9B030077EC16 /* LatestAPIHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LatestAPIHandle.m; sourceTree = "<group>"; };
+		7A3893311B9C9E280077EC16 /* APIHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIHandle.h; sourceTree = "<group>"; };
+		7A3893321B9C9E280077EC16 /* APIHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIHandle.m; sourceTree = "<group>"; };
+		7A3893341B9CA59D0077EC16 /* APIParamSourceInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIParamSourceInterface.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +93,8 @@
 		7A3892FD1B9C922F0077EC16 /* CallBack */ = {
 			isa = PBXGroup;
 			children = (
+				7A3893241B9C98D00077EC16 /* APIInterface */,
+				7A3893271B9C99700077EC16 /* APIHandle */,
 				7A3893021B9C922F0077EC16 /* AppDelegate.h */,
 				7A3893031B9C922F0077EC16 /* AppDelegate.m */,
 				7A3893051B9C922F0077EC16 /* ViewController.h */,
@@ -117,6 +131,45 @@
 				7A3893191B9C92300077EC16 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7A3893241B9C98D00077EC16 /* APIInterface */ = {
+			isa = PBXGroup;
+			children = (
+				7A3893251B9C98F10077EC16 /* APIInterface.h */,
+				7A3893261B9C99430077EC16 /* APICallbackInterface.h */,
+				7A3893341B9CA59D0077EC16 /* APIParamSourceInterface.h */,
+			);
+			name = APIInterface;
+			sourceTree = "<group>";
+		};
+		7A3893271B9C99700077EC16 /* APIHandle */ = {
+			isa = PBXGroup;
+			children = (
+				7A3893311B9C9E280077EC16 /* APIHandle.h */,
+				7A3893321B9C9E280077EC16 /* APIHandle.m */,
+				7A38932C1B9C9AD10077EC16 /* LatestAPIHandle */,
+				7A3893281B9C9A090077EC16 /* HotAPIHandle */,
+			);
+			name = APIHandle;
+			sourceTree = "<group>";
+		};
+		7A3893281B9C9A090077EC16 /* HotAPIHandle */ = {
+			isa = PBXGroup;
+			children = (
+				7A3893291B9C9A2D0077EC16 /* HotAPIHandle.h */,
+				7A38932A1B9C9A2D0077EC16 /* HotAPIHandle.m */,
+			);
+			name = HotAPIHandle;
+			sourceTree = "<group>";
+		};
+		7A38932C1B9C9AD10077EC16 /* LatestAPIHandle */ = {
+			isa = PBXGroup;
+			children = (
+				7A38932D1B9C9B030077EC16 /* LatestAPIHandle.h */,
+				7A38932E1B9C9B030077EC16 /* LatestAPIHandle.m */,
+			);
+			name = LatestAPIHandle;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,7 +273,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A3893071B9C922F0077EC16 /* ViewController.m in Sources */,
+				7A38932F1B9C9B030077EC16 /* LatestAPIHandle.m in Sources */,
 				7A3893041B9C922F0077EC16 /* AppDelegate.m in Sources */,
+				7A38932B1B9C9A2D0077EC16 /* HotAPIHandle.m in Sources */,
+				7A3893331B9C9E280077EC16 /* APIHandle.m in Sources */,
 				7A3893011B9C922F0077EC16 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

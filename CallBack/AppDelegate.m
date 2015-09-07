@@ -7,9 +7,14 @@
 //
 
 #import "AppDelegate.h"
+#import "ViewController.h"
+
+#import "HotAPIHandle.h"
+#import "LatestAPIHandle.h"
 
 @interface AppDelegate ()
-
+@property (nonatomic, strong) HotAPIHandle *hotAPIHandle;
+@property (nonatomic, strong) LatestAPIHandle *latestAPIHandle;
 @end
 
 @implementation AppDelegate
@@ -17,7 +22,43 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.backgroundColor = [UIColor whiteColor];
+    
+    ViewController *viewController = [[ViewController alloc] init];
+    
+    viewController.hotAPIHandel = self.hotAPIHandle;
+    self.hotAPIHandle.callbackHandle = viewController;
+    self.hotAPIHandle.paramSourceHandle = viewController;
+    
+    viewController.latestAPIHandel = self.latestAPIHandle;
+    self.latestAPIHandle.callbackHandle = viewController;
+    self.latestAPIHandle.paramSourceHandle = viewController;
+    
+    UINavigationController *navigationController = [[UINavigationController alloc]initWithRootViewController:viewController];
+    self.window.rootViewController = navigationController;
+    
+    [self.window makeKeyAndVisible];
     return YES;
+}
+
+- (HotAPIHandle *)hotAPIHandle
+{
+    if(!_hotAPIHandle)
+    {
+        _hotAPIHandle = [[HotAPIHandle alloc] init];
+    }
+    return _hotAPIHandle;
+}
+
+- (LatestAPIHandle *)latestAPIHandle
+{
+    if(!_latestAPIHandle)
+    {
+        _latestAPIHandle = [[LatestAPIHandle alloc] init];
+    }
+    return _latestAPIHandle;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

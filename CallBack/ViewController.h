@@ -7,9 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "APIInterface.h"
+#import "APIParamSourceInterface.h"
+#import "APICallbackInterface.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController<APIParamSourceInterface,APICallbackInterface>
 
-
+@property (nonatomic, weak) id<APIInterface> hotAPIHandel;
+@property (nonatomic, weak) id<APIInterface> latestAPIHandel;
 @end
 
